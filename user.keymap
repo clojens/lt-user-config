@@ -1,19 +1,44 @@
-;; User keymap
-;; -----------------------------
-;; Keymaps are stored as a set of diffs that are merged together to create
-;; the final set of keys. You can modify these diffs to either add or
-;; subtract bindings.
-;;
-;; Like behaviors, keys are bound by tag. When objects with those tags are active
-;; the key bindings are live. Keys can be bound to any number of Light Table commands,
-;; allowing you the flexibility to execute multiple operations together. To see a list
-;; of all the commands you can execute, start typing a word related to the thing you
-;; want to do in between the square brackets (e.g. type "editor").
-
+;; Your file has been converted to the new flat format.
+;; Conversion does not preserve comments or indentation.
+;; File is backed up at /home/acme/.config/LightTable/User/user.keymap.bak
 [
- [:editor "alt-w" :editor.watch.watch-selection]
- [:editor "alt-shift-w" :editor.watch.unwatch]
+ [:app "ctrl-b" :behaviors.modify-user]
+ [:app "ctrl-shift-/" :clear-console :reset-working]
+ [:app "ctrl-d" :editor.doc.toggle]
+ [:app "f12" :dev-inspector]
+ [:app "ctrl-k" :keymap.modify-user]
+ [:app "ctrl-left" :tabs.prev]
+ [:app "alt-n" :new-file :set-syntax]
+ [:app "ctrl-t" :instarepl]
+ [:app "alt-w" :workspace.show]
+ [:app "ctrl-shift-space" :workspace.show]
+ [:app "ctrl-right" :tabs.next]
 
- ;; To subtract a binding, prefix the key with '-'  e.g.
- ;;  [:app "-ctrl-shift-d" :docs.search.show]
+ [:editor "alt-enter" (:paredit.select.parent "(") :eval-editor-form :paredit.select.clear]
+
+ [:editor "alt-d" :editor.delete-line]
+ [:editor "ctrl-b" :behaviors.modify-user]
+ [:editor "ctrl-shift-." :show-connect :editor.disconnect-clients :focus-last-editor :paredit.select.parent :eval-editor-form :clear-console :clear-inline-results]
+ [:editor "alt-down" :editor.sublime.swapLineDown]
+ [:editor "ctrl-i" :clear-inline-results]
+ [:editor "ctrl-k" :keymap.modify-user]
+ [:editor "ctrl-m" (:eval.custom "(ns lt.custom (:require [lt.objs.popup :as popup]))\n                            (popup/popup! {:header \"Light Table has been updated!\"\n                             :body (str \"Light Table has been updated to \" ver \"! Just\n                                        restart to get the latest and greatest.\")\n                             :buttons [{:label \"ok\"}]})")]
+ [:editor "alt-left" :editor.line-start]
+ [:editor "ctrl-." :show-connect :focus-last-editor]
+ [:editor "ctrl-pageup" :hide-connect]
+ [:editor "alt-q" :lt.plugins.reflow/reflow]
+ [:editor "ctrl-/" :toggle-console :focus-last-editor]
+ [:editor "alt-s" :editor.sublime.selectBetweenBrackets]
+ [:editor "ctrl-shift-backspace" :editor.disconnect-clients :show-add-connection]
+ [:editor "ctrl-t" :instarepl :instarepl.toggle-live]
+ [:editor "ctrl-pagedown" :show-add-connection]
+ [:editor "alt-[" :unindent-selection]
+ [:editor "alt-right" :editor.line-end]
+ [:editor "alt-]" :indent-selection]
+ [:editor "ctrl-;" :toggle-comment-selection]
+ [:editor "alt-a" :aleph.browse]
+ [:editor "ctrl-backspace" :instarepl.toggle-live :eval-editor-form]
+ [:editor "alt-b" :add-browser-tab :browser.url-bar.focus]
+ [:editor "ctrl-`" :instarepl.toggle-live]
+ [:editor "alt-up" :editor.sublime.swapLineUp]
 ]

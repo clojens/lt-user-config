@@ -1,31 +1,22 @@
-;; User behaviors
-;; -----------------------------
-;; Behaviors are stored as a set of diffs that are merged together
-;; to create the final set of functionality that makes up Light Table. You can
-;; modify these diffs to either add or subtract functionality.
-;;
-;; Behaviors are added to tags, objects with those tags then automatically gain
-;; whatever logic the behavior imparts. To see a list of user-level behaviors,
-;; start typing a word related to the functionality you want in between the square
-;; brackets (e.g. "theme").
-
+;; Your file has been converted to the new flat format.
+;; Conversion does not preserve comments or indentation.
+;; File is backed up at /home/acme/.config/LightTable/User/user.behaviors.bak
 [
- ;; The app tag is kind of like global scope. You assign behaviors that affect
- ;; all of Light Table to it.
  [:app :lt.objs.style/set-skin "dark"]
- [:app :lt.objs.plugins/load-js "user_compiled.js"]
+ [:app :lt.objs.sidebar.workspace/workspace.open-on-start]
+ [:app :lt.objs.intro/show-new-file]
+ [:app :-lt.objs.intro/show-intro]
 
- ;; The editor tag is applied to all editors
  [:editor :lt.objs.editor/no-wrap]
- [:editor :lt.objs.style/set-theme "default"]
+ [:editor :lt.objs.style/set-theme "cheerup"]
+ [:editor :lt.objs.editor/line-numbers]
+ [:editor :lt.objs.style/font-settings "DejaVu Sans Mono" 11 1.4]
+ [:editor :lt.plugins.reflow/set-width 80]
+ [:editor :lt.plugins.vim/activate-vim]
 
- ;; Here we can add behaviors to just clojure editors
- [:editor.clojure :lt.plugins.clojure/print-length 1000]
+ [:editor.clj.instarepl :lt.plugins.clojure.instarepl/start-content ";; My liege?"]
 
- ;; Behaviors specific to a user-defined object
- [:user.hello :lt.plugins.user/on-close-destroy]
+ [:editor.clojure :lt.plugins.clojure/print-length 2000]
 
- ;; To subtract a behavior, prefix the name with '-' e.g.
- ;;  [:app :-lt.objs.intro/show-intro]
+ [:files :lt.objs.files/file-types [{:exts [:ebnf :abnf :bnf :insta], :mime "text/x-plaintext", :tags [:editor.bnf], :name "BNF"}]]
 ]
-

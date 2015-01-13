@@ -1,6 +1,28 @@
-{:name "User"
- :version "0.1.0"
- :author "Rob Jentzema"
- :source "https://github.com/clojens/lt-user-config"
- :desc "My personal Light Table editor configuration of behaviors and keys."
- :behaviors "user.behaviors"}
+{:desc "TODO",
+ :version "0.0.1",
+ :source "TODO",
+ :behaviors "user.behaviors",
+ ;; Do not edit - :dependencies are auto-generated
+:dependencies {
+"Aleph" "0.1.0",
+ "Birch" "0.0.1",
+ "Bracket glow" "0.0.2",
+ "CSS" "0.0.6",
+ "Cheerup theme" "0.1.0",
+ "Clojure" "0.1.1",
+ "Emmet" "0.0.2",
+ "HTML" "0.0.2",
+ "Javascript" "0.1.2",
+ "NoQuestions" "0.1.0",
+ "Palette" "0.0.1",
+ "Paredit" "0.0.4",
+ "Python" "0.0.5",
+ "Rainbow" "0.0.8",
+ "SCSS" "0.0.2",
+ "Splash" "0.0.1",
+ "Subpar" "0.0.1",
+ "asciidoctor" "0.1.0",
+ "cutlery" "0.1.0",
+ "mermaid" "0.1.0"},
+ :author "TODO",
+ :name "User"}
