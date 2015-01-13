@@ -1,0 +1,6 @@
+{:name "User"
+ :version "0.1.0"
+ :author "Rob Jentzema"
+ :source "https://github.com/clojens/lt-user-config"
+ :desc "My personal Light Table editor configuration of behaviors and keys."
+ :behaviors "user.behaviors"}
